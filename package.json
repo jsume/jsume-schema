@@ -1,7 +1,7 @@
 {
   "name": "@jsume/schema",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
   "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af",
   "description": "JSON Resume Schema",
@@ -11,10 +11,28 @@
     "type": "git",
     "url": "git://github.com/jsume/jsume-schema.git"
   },
-  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/jsume/jsume-schema/issues"
+  },
+  "keywords": [
+    "json",
+    "resume",
+    "schema",
+    "jsume",
+    "json-resume"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./*.json": "./schemas/*.json",
+    "./data/*.json": "./schemas/data/*.json"
+  },
+  "main": "index.js",
   "files": [
     "schemas/**/*.json"
   ],
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
