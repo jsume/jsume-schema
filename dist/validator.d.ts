@@ -6,4 +6,4 @@ type ValidatorCallback = (valid: boolean, errorsText?: string) => void;
 type Lang = keyof typeof def;
 declare function validator(data: unknown, callback: ValidatorCallback, lang: Lang): void;
 
-export { ajv, validator as default };
+export { type Lang, type ValidatorCallback, ajv, validator as default };

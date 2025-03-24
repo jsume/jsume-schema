@@ -22,8 +22,8 @@
     "json-resume"
   ],
   "exports": {
-    ".": "./index.js",
-    "./validator": "./validator.js",
+    ".": "./dist/index.js",
+    "./validator": "./dist/validator.js",
     "./*.json": "./schemas/*.json",
     "./data/*.json": "./schemas/data/*.json"
   },

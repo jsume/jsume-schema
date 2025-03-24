@@ -40,8 +40,8 @@ ajv.addFormat('url', customFormats.url)
 
 const validate = ajv.compile(schema)
 
-type ValidatorCallback = (valid: boolean, errorsText?: string) => void
-type Lang = keyof typeof def
+export type ValidatorCallback = (valid: boolean, errorsText?: string) => void
+export type Lang = keyof typeof def
 function validator(data: unknown, callback: ValidatorCallback, lang: Lang): void {
   const valid = validate(data)
 
