@@ -23,27 +23,44 @@
   ],
   "exports": {
     ".": "./index.js",
+    "./validator": "./validator.js",
     "./*.json": "./schemas/*.json",
     "./data/*.json": "./schemas/data/*.json"
   },
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "schemas/**/*.json"
+    "dist",
+    "schemas"
   ],
-  "engines": {
-    "node": ">=18"
-  },
   "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "release": "bumpp && npm publish"
   },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "ajv-i18n": "^4.2.0"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^4.11.0",
     "bumpp": "^10.1.0",
-    "eslint": "^9.23.0"
+    "eslint": "^9.23.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
