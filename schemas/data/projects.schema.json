@@ -1,0 +1,47 @@
+{
+  "$id": "https://jsume.moo.zone/data/projects.schema.json",
+  "type": "array",
+  "uniqueItems": true,
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "e.g. Vitest"
+      },
+      "website": {
+        "$ref": "/definitions.json#/$defs/url"
+      },
+      "githubUrl": {
+        "$ref": "/definitions.json#/$defs/githubUrl"
+      },
+      "startDate": {
+        "$ref": "/definitions.json#/$defs/date"
+      },
+      "endDate": {
+        "$ref": "/definitions.json#/$defs/endDate"
+      },
+      "summary": {
+        "type": "string",
+        "description": "Give an overview of the project"
+      },
+      "highlights": {
+        "type": "array",
+        "uniqueItems": true,
+        "description": "Specify multiple accomplishments",
+        "items": {
+          "type": "string",
+          "description": "e.g. Integrated Vite into Nuxt 3 resulted in 50x faster development time."
+        }
+      }
+    },
+    "required": [
+      "name",
+      "summary"
+    ],
+    "dependentRequired": {
+      "startDate": ["endDate"],
+      "endDate": ["startDate"]
+    }
+  }
+}

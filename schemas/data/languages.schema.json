@@ -1,0 +1,30 @@
+{
+  "$id": "https://jsume.moo.zone/data/languages.schema.json",
+  "type": "array",
+  "uniqueItems": true,
+  "items": {
+    "type": "object",
+    "properties": {
+      "language": {
+        "type": "string",
+        "description": "e.g. English"
+      },
+      "fluency": {
+        "description": "https://anglo-link.com/level/",
+        "enum": [
+          "Beginner",
+          "Enlementary",
+          "Intermediate",
+          "Advanced",
+          "Fluent",
+          "Proficient",
+          "Native"
+        ]
+      }
+    },
+    "required": [
+      "language",
+      "fluency"
+    ]
+  }
+}

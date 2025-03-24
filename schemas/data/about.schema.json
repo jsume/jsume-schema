@@ -1,0 +1,42 @@
+{
+  "$id": "https://jsume.moo.zone/data/about.schema.json",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string",
+      "description": "e.g. Web Developer"
+    },
+    "image": {
+      "$ref": "/definitions.json#/$defs/url"
+    },
+    "email": {
+      "$ref": "/definitions.json#/$defs/email"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone numbers are stored as strings so use any format you like, e.g. 712-117-2923"
+    },
+    "url": {
+      "$ref": "/definitions.json#/$defs/url",
+      "description": "URL to your website, e.g. personal homepage"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Write a short 2-3 sentence biography about yourself"
+    },
+    "location": {
+      "$ref": "/definitions.json#/$defs/location"
+    },
+    "profiles": {
+      "type": "array",
+      "description": "Specify any number of social networks that you participate in",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "/definitions.json#/$defs/social"
+      }
+    }
+  }
+}

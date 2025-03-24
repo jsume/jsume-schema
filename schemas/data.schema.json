@@ -1,0 +1,16 @@
+{
+  "$id": "https://jsume.moo.zone/data.schema.json",
+  "type": "object",
+  "properties": {
+    "about": { "$ref": "data/about.schema.json" },
+    "work": { "$ref": "data/work.schema.json" },
+    "projects": { "$ref": "data/projects.schema.json" },
+    "education": { "$ref": "data/education.schema.json" },
+    "awards": { "$ref": "data/awards.schema.json" },
+    "languages": { "$ref": "data/languages.schema.json" },
+    "skills": { "$ref": "data/skills.schema.json" }
+  },
+  "required": [
+    "about"
+  ]
+}

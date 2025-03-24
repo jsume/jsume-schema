@@ -1,0 +1,25 @@
+{
+  "$id": "https://jsume.moo.zone/data/skills.schema.json",
+  "type": "array",
+  "uniqueItems": true,
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "e.g. JavaScript"
+      },
+      "keywords": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "name",
+      "keywords"
+    ]
+  }
+}

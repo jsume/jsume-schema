@@ -1,0 +1,96 @@
+{
+  "$id": "https://jsume.moo.zone/definitions.json",
+  "$defs": {
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "e.g. thomas@gmail.com"
+    },
+    "url": {
+      "type": "string",
+      "format": "url"
+    },
+    "githubUrl": {
+      "type": "string",
+      "format": "githubUrl"
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 1900
+    },
+    "month": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12
+    },
+    "day": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 31
+    },
+    "date": {
+      "type": "object",
+      "properties": {
+        "year": {
+          "$ref": "#/$defs/year"
+        },
+        "month": {
+          "$ref": "#/$defs/month"
+        },
+        "day": {
+          "$ref": "#/$defs/day"
+        }
+      },
+      "required": ["year", "month"]
+    },
+    "endDate": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/date"
+        },
+        {
+          "const": false
+        }
+      ]
+    },
+    "location": {
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "e.g. Remote or GitHub"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "city": {
+              "type": "string",
+              "description": "e.g. New York"
+            },
+            "country": {
+              "type": "string",
+              "description": "e.g. United States"
+            }
+          },
+          "minProperties": 1
+        }
+      ]
+    },
+    "social": {
+      "type": "object",
+      "properties": {
+        "network": {
+          "type": "string",
+          "description": "e.g. Facebook or Twitter"
+        },
+        "username": {
+          "type": "string",
+          "description": "e.g. MoozonWei"
+        },
+        "url": {
+          "$ref": "#/$defs/url"
+        }
+      },
+      "required": ["network", "username", "url"]
+    }
+  }
+}

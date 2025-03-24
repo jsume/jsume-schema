@@ -1,0 +1,35 @@
+{
+  "$id": "https://jsume.moo.zone/data/awards.schema.json",
+  "type": "array",
+  "uniqueItems": true,
+  "items": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "description": "e.g. Nuxt Hero"
+      },
+      "date": {
+        "$ref": "/definitions.json#/$defs/date"
+      },
+      "awarder": {
+        "type": "string",
+        "description": "e.g. NuxtLabs"
+      },
+      "summary": {
+        "type": "string",
+        "description": "e.g. The best contributor of the year"
+      },
+      "description": {
+        "type": "string",
+        "description": "Describe the award in detail"
+      }
+    },
+    "required": [
+      "title",
+      "date",
+      "awarder",
+      "summary"
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "$id": "https://jsume.moo.zone/data/education.schema.json",
+  "type": "array",
+  "uniqueItems": true,
+  "items": {
+    "type": "object",
+    "properties": {
+      "institution": {
+        "type": "string",
+        "description": "e.g. University of California, Berkeley"
+      },
+      "location": {
+        "$ref": "/definitions.json#/$defs/location"
+      },
+      "area": {
+        "type": "string",
+        "description": "e.g. Computer Science"
+      },
+      "degree": {
+        "type": "string",
+        "description": "e.g. Bachelor of Science"
+      },
+      "gpa": {
+        "type": "number",
+        "description": "e.g. 3.5"
+      },
+      "startDate": {
+        "$ref": "/definitions.json#/$defs/date"
+      },
+      "endDate": {
+        "$ref": "/definitions.json#/$defs/endDate"
+      },
+      "activities": {
+        "type": "array",
+        "description": "Specify multiple activities",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "description": "e.g. President of the Computer Science Club"
+        }
+      },
+      "courses": {
+        "type": "array",
+        "description": "Specify multiple courses",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "description": "e.g. CS 61A: Structure and Interpretation of Computer Programs"
+        }
+      }
+    },
+    "required": [
+      "institution",
+      "area",
+      "degree",
+      "startDate",
+      "endDate"
+    ]
+  }
+}

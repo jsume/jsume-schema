@@ -1,0 +1,19 @@
+{
+  "$id": "https://jsume.moo.zone/schema.json",
+  "type": "object",
+  "properties": {
+    "config": { "$ref": "config.schema.json" },
+    "data": {
+      "type": "object",
+      "patternProperties": {
+        "^(en|zh)$": { "$ref": "data.schema.json" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "config",
+    "data"
+  ],
+  "additionalProperties": false
+}

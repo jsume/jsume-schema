@@ -1,0 +1,50 @@
+{
+  "$id": "https://jsume.moo.zone/data/work.schema.json",
+  "type": "array",
+  "uniqueItems": true,
+  "items": {
+    "type": "object",
+    "properties": {
+      "company": {
+        "type": "string",
+        "description": "e.g. Facebook"
+      },
+      "location": {
+        "$ref": "/definitions.json#/$defs/location"
+      },
+      "position": {
+        "type": "string",
+        "description": "e.g. Software Engineer"
+      },
+      "website": {
+        "$ref": "/definitions.json#/$defs/url",
+        "description": "e.g. http://facebook.example.com"
+      },
+      "startDate": {
+        "$ref": "/definitions.json#/$defs/date"
+      },
+      "endDate": {
+        "$ref": "/definitions.json#/$defs/endDate"
+      },
+      "summary": {
+        "type": "string",
+        "description": "Give an overview of your responsibilities at the company"
+      },
+      "highlights": {
+        "type": "array",
+        "description": "Specify multiple accomplishments",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising"
+        }
+      }
+    },
+    "required": [
+      "company",
+      "position",
+      "startDate",
+      "endDate"
+    ]
+  }
+}
