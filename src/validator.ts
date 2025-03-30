@@ -10,6 +10,7 @@ import skillsSchema from '@s/data/skills.schema.json'
 import workSchema from '@s/data/work.schema.json'
 import definitions from '@s/definitions.json'
 import schema from '@s/schema.json'
+import addFormats from 'ajv-formats'
 import localize from 'ajv-i18n'
 import Ajv2020 from 'ajv/dist/2020.js'
 
@@ -27,7 +28,10 @@ export const ajv = new Ajv2020({
     skillsSchema,
     languagesSchema,
   ],
+  allErrors: true,
 })
+
+addFormats(ajv, { mode: 'fast' })
 
 const validate = ajv.compile(schema)
 
