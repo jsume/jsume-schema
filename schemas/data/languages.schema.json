@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jsume.moo.zone/data/languages.schema.json",
   "type": "array",
   "uniqueItems": true,
@@ -10,7 +11,7 @@
         "description": "e.g. English"
       },
       "fluency": {
-        "description": "https://anglo-link.com/level/",
+        "description": "Describe your fluency level in this language, for reference see https://anglo-link.com/level/",
         "enum": [
           "Beginner",
           "Enlementary",

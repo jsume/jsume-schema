@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jsume.moo.zone/definitions.json",
   "$defs": {
     "email": {
@@ -8,11 +9,13 @@
     },
     "url": {
       "type": "string",
-      "format": "url"
+      "pattern": "^(https?:\\/\\/)?(www\\.)?[-\\w@:%.+~#=]{2,256}\\.[a-z]{2,6}\\b([-\\w@:%+.~#?&/=]*)$",
+      "description": "e.g. https://jsume.moo.zone"
     },
     "githubUrl": {
       "type": "string",
-      "format": "githubUrl"
+      "pattern": "^(https?:\\/\\/)?(www\\.)?github\\.com\\b([-\\w@:%+.~#?&/=]*)$",
+      "description": "Should be a valid GitHub URL"
     },
     "year": {
       "type": "integer",
@@ -41,15 +44,20 @@
           "$ref": "#/$defs/day"
         }
       },
-      "required": ["year", "month"]
+      "required": [
+        "year",
+        "month"
+      ]
     },
     "endDate": {
       "anyOf": [
         {
-          "$ref": "#/$defs/date"
+          "$ref": "#/$defs/date",
+          "description": "A date object with year, month and day(optional)"
         },
         {
-          "const": false
+          "const": false,
+          "description": "No end date"
         }
       ]
     },
@@ -90,7 +98,11 @@
           "$ref": "#/$defs/url"
         }
       },
-      "required": ["network", "username", "url"]
+      "required": [
+        "network",
+        "username",
+        "url"
+      ]
     }
   }
 }

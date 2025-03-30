@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jsume.moo.zone/data/skills.schema.json",
   "type": "array",
   "uniqueItems": true,
@@ -11,9 +12,11 @@
       },
       "keywords": {
         "type": "array",
+        "description": "Specify multiple keywords that are related to this skill",
         "uniqueItems": true,
         "items": {
-          "type": "string"
+          "type": "string",
+          "description": "e.g. React, Node.js, Express"
         }
       }
     },

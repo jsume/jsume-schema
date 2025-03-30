@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jsume.moo.zone/data/work.schema.json",
   "type": "array",
   "uniqueItems": true,
@@ -10,7 +11,8 @@
         "description": "e.g. Facebook"
       },
       "location": {
-        "$ref": "/definitions.json#/$defs/location"
+        "$ref": "/definitions.json#/$defs/location",
+        "description": "Location of the company, e.g. Menlo Park, CA"
       },
       "position": {
         "type": "string",
@@ -21,10 +23,12 @@
         "description": "e.g. http://facebook.example.com"
       },
       "startDate": {
-        "$ref": "/definitions.json#/$defs/date"
+        "$ref": "/definitions.json#/$defs/date",
+        "description": "The date you started working at the company"
       },
       "endDate": {
-        "$ref": "/definitions.json#/$defs/endDate"
+        "$ref": "/definitions.json#/$defs/endDate",
+        "description": "The date you stopped working at the company, or false if you are still working there"
       },
       "summary": {
         "type": "string",

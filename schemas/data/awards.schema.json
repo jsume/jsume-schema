@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jsume.moo.zone/data/awards.schema.json",
   "type": "array",
   "uniqueItems": true,
@@ -10,7 +11,8 @@
         "description": "e.g. Nuxt Hero"
       },
       "date": {
-        "$ref": "/definitions.json#/$defs/date"
+        "$ref": "/definitions.json#/$defs/date",
+        "description": "The date you received the award"
       },
       "awarder": {
         "type": "string",

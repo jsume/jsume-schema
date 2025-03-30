@@ -3,7 +3,6 @@ import { defineConfig } from 'tsup'
 export default defineConfig({
   entry: [
     'src/index.ts',
-    'src/customFormats.ts',
     'src/validator.ts',
   ],
   shims: true,

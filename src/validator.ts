@@ -1,10 +1,4 @@
-import addFormats from 'ajv-formats'
-import localize from 'ajv-i18n'
-import Ajv2020 from 'ajv/dist/2020.js'
 import type def from 'ajv-i18n'
-
-// schema
-import schema from '@s/schema.json'
 import configSchema from '@s/config.schema.json'
 import dataSchema from '@s/data.schema.json'
 import aboutSchema from '@s/data/about.schema.json'
@@ -15,9 +9,9 @@ import projectsSchema from '@s/data/projects.schema.json'
 import skillsSchema from '@s/data/skills.schema.json'
 import workSchema from '@s/data/work.schema.json'
 import definitions from '@s/definitions.json'
-
-// custom formats
-import customFormats from './customFormats'
+import schema from '@s/schema.json'
+import localize from 'ajv-i18n'
+import Ajv2020 from 'ajv/dist/2020.js'
 
 export const ajv = new Ajv2020({
   schemas: [
@@ -34,19 +28,16 @@ export const ajv = new Ajv2020({
     languagesSchema,
   ],
 })
-addFormats(ajv)
-ajv.addFormat('url', customFormats.url)
-  .addFormat('githubUrl', customFormats.githubUrl)
 
 const validate = ajv.compile(schema)
 
-export type ValidatorCallback = (valid: boolean, errorsText?: string) => void
+export type ValidatorCallback = (isValid: boolean, errorsText?: string) => void
 export type Lang = keyof typeof def
 function validator(data: unknown, callback: ValidatorCallback, lang: Lang): void {
   const valid = validate(data)
 
   if (!valid) {
-    const localizedErrors = localize[lang](validate.errors)
+    localize[lang](validate.errors)
     const localizedErrorsText = ajv.errorsText(validate.errors, { separator: '\n' })
     callback(false, localizedErrorsText)
     return

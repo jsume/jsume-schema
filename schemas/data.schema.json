@@ -1,14 +1,36 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jsume.moo.zone/data.schema.json",
   "type": "object",
   "properties": {
-    "about": { "$ref": "data/about.schema.json" },
-    "work": { "$ref": "data/work.schema.json" },
-    "projects": { "$ref": "data/projects.schema.json" },
-    "education": { "$ref": "data/education.schema.json" },
-    "awards": { "$ref": "data/awards.schema.json" },
-    "languages": { "$ref": "data/languages.schema.json" },
-    "skills": { "$ref": "data/skills.schema.json" }
+    "about": {
+      "$ref": "data/about.schema.json",
+      "description": "Information about yourself, such as your name, email, phone number, and location"
+    },
+    "work": {
+      "$ref": "data/work.schema.json",
+      "description": "Your work experience, including the companies you've worked for, your positions, and your responsibilities"
+    },
+    "projects": {
+      "$ref": "data/projects.schema.json",
+      "description": "Your projects, including the names, descriptions, and URLs of your projects"
+    },
+    "education": {
+      "$ref": "data/education.schema.json",
+      "description": "Your education history, including the schools you've attended, your degrees, and your fields of study"
+    },
+    "awards": {
+      "$ref": "data/awards.schema.json",
+      "description": "Your awards and honors, including the names, dates, and descriptions of your awards"
+    },
+    "languages": {
+      "$ref": "data/languages.schema.json",
+      "description": "Your language skills, including the languages you speak and your proficiency levels"
+    },
+    "skills": {
+      "$ref": "data/skills.schema.json",
+      "description": "Your skills, including the names and keywords related to your skills"
+    }
   },
   "required": [
     "about"

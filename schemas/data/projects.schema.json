@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jsume.moo.zone/data/projects.schema.json",
   "type": "array",
   "uniqueItems": true,
@@ -10,16 +11,20 @@
         "description": "e.g. Vitest"
       },
       "website": {
-        "$ref": "/definitions.json#/$defs/url"
+        "$ref": "/definitions.json#/$defs/url",
+        "description": "URL to the project website"
       },
       "githubUrl": {
-        "$ref": "/definitions.json#/$defs/githubUrl"
+        "$ref": "/definitions.json#/$defs/githubUrl",
+        "description": "URL to the project GitHub repository"
       },
       "startDate": {
-        "$ref": "/definitions.json#/$defs/date"
+        "$ref": "/definitions.json#/$defs/date",
+        "description": "The date you started working on the project"
       },
       "endDate": {
-        "$ref": "/definitions.json#/$defs/endDate"
+        "$ref": "/definitions.json#/$defs/endDate",
+        "description": "The date you stopped working on the project, or false if you are still working on it"
       },
       "summary": {
         "type": "string",
@@ -31,7 +36,7 @@
         "description": "Specify multiple accomplishments",
         "items": {
           "type": "string",
-          "description": "e.g. Integrated Vite into Nuxt 3 resulted in 50x faster development time."
+          "description": "e.g. Integrated Vite into Nuxt 3 resulted in 50x faster development time"
         }
       }
     },
@@ -40,8 +45,12 @@
       "summary"
     ],
     "dependentRequired": {
-      "startDate": ["endDate"],
-      "endDate": ["startDate"]
+      "startDate": [
+        "endDate"
+      ],
+      "endDate": [
+        "startDate"
+      ]
     }
   }
 }

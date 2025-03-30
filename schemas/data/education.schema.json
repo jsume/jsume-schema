@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jsume.moo.zone/data/education.schema.json",
   "type": "array",
   "uniqueItems": true,
@@ -7,10 +8,11 @@
     "properties": {
       "institution": {
         "type": "string",
-        "description": "e.g. University of California, Berkeley"
+        "description": "e.g. University of California"
       },
       "location": {
-        "$ref": "/definitions.json#/$defs/location"
+        "$ref": "/definitions.json#/$defs/location",
+        "description": "Location of the institution, e.g. Berkeley, CA"
       },
       "area": {
         "type": "string",
@@ -25,10 +27,12 @@
         "description": "e.g. 3.5"
       },
       "startDate": {
-        "$ref": "/definitions.json#/$defs/date"
+        "$ref": "/definitions.json#/$defs/date",
+        "description": "The date you started studying at the institution"
       },
       "endDate": {
-        "$ref": "/definitions.json#/$defs/endDate"
+        "$ref": "/definitions.json#/$defs/endDate",
+        "description": "The date you stopped studying at the institution, or false if you are still studying there"
       },
       "activities": {
         "type": "array",

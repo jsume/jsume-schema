@@ -1,9 +1,16 @@
 import { antfu } from '@antfu/eslint-config'
 
-export default antfu()
+export default antfu({
+  languageOptions: {
+    parserOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+    },
+  },
+})
   .append(
     {
-      files: ['index.js', 'README.md/**/*'],
+      files: ['README.md/**/*'],
       rules: {
         'perfectionist/sort-imports': 'off',
         'perfectionist/sort-exports': 'off',

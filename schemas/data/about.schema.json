@@ -1,23 +1,27 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jsume.moo.zone/data/about.schema.json",
   "type": "object",
   "properties": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "e.g. John Doe"
     },
     "label": {
       "type": "string",
       "description": "e.g. Web Developer"
     },
     "image": {
-      "$ref": "/definitions.json#/$defs/url"
+      "$ref": "/definitions.json#/$defs/url",
+      "description": "URL to your profile image"
     },
     "email": {
-      "$ref": "/definitions.json#/$defs/email"
+      "$ref": "/definitions.json#/$defs/email",
+      "description": "Your email address"
     },
     "phone": {
       "type": "string",
-      "description": "Phone numbers are stored as strings so use any format you like, e.g. 712-117-2923"
+      "description": "Phone numberslare stored as strings so use any format you like, e.g. 712-117-2923"
     },
     "url": {
       "$ref": "/definitions.json#/$defs/url",
@@ -28,7 +32,8 @@
       "description": "Write a short 2-3 sentence biography about yourself"
     },
     "location": {
-      "$ref": "/definitions.json#/$defs/location"
+      "$ref": "/definitions.json#/$defs/location",
+      "description": "Your current location"
     },
     "profiles": {
       "type": "array",
@@ -38,5 +43,8 @@
         "$ref": "/definitions.json#/$defs/social"
       }
     }
-  }
+  },
+  "required": [
+    "name"
+  ]
 }

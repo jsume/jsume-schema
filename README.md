@@ -3,8 +3,6 @@
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 
-Use node >= 18 to import the schemas.
-
 ```js
 import {
   schema,
